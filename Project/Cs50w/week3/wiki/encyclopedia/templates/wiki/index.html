@@ -1,0 +1,15 @@
+{% extends "wiki/layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<h1>All page</h1>
+    <ul>
+        {% for entry in entries %}
+        <li>
+            <!-- https://docs.djangoproject.com/en/4.1/topics/http/urls/ -->
+            <a href="{% url 'wiki:entry' entry %}">{{ entry }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

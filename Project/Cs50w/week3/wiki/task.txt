@@ -1,0 +1,22 @@
+Entry page:
+    - User can visiting the Wiki/{entry} page to view content /DONE
+    - Render page is not found when the {entry} does not exit /DONE
+
+Index page:
+    - List all the current entry and the link of those /DONE
+
+Search: 
+    - If the query match the {entry}, the user will go direct to the entry page /DONE
+    - Else user will take to the page where  list of all encyclopedia entries that have the query as a substring /DONE
+        - CLick on any of entry name will redirect user to the entry page /DONE
+Newpage:
+    - Click Create New Page button will redirect to the Crate new page page /Done
+    - User can enter Title and, in textarea should be able to enter markdown content/Done
+    - Have save button /Done
+    - If the provied Title have already exit, prevent user from save it /Done
+    - Otherwise the content should be save and user going to the New entry page /Done
+Edit Page:
+    - Edit button on entry page /Done
+    - The textarea should be pre-populated /DONE
+    - Save button / Done
+    - After save, user will be redirect to the entry page /Done

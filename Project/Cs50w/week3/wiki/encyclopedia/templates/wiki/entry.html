@@ -1,0 +1,12 @@
+{% extends "wiki/layout.html" %}
+
+{% block title %}{{entry}}{% endblock %}
+
+{% block body %}
+    {% if content %}
+        {{content}}
+    {% else %}
+        <h1>404 {{entry}} not found</h1>
+    {% endif %}
+    <a href="{% url 'wiki:edit' entry %}">Edit</a>
+{% endblock %}

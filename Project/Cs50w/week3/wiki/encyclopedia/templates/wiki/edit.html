@@ -1,0 +1,16 @@
+{% extends "wiki/layout.html" %}
+
+{% block title %}Edit | {{entry}} {% endblock %}
+
+{% block body %}
+<h1>Editing {{ entry }}</h1>
+<form action="{% url 'wiki:edit' entry %}" method="post">
+    {% csrf_token %}
+    <label for="title">Page Title:</label><br>
+    <input autofocus type="text" name="title" value="{{ entry }}">
+    <h6>{{ error }}</h6><br>
+    <label for="content_name">Page content:</label><br>
+    <textarea name="content_name" id="content_id" cols="" rows="" placeholder="Content in markdown">{{ content }}</textarea><br>
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

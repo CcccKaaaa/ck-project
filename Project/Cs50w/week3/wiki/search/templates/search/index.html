@@ -1,0 +1,18 @@
+{% extends "wiki/layout.html" %}
+
+{% block title %} Search | {{ q }} {% endblock %}
+
+{% block body %}
+    {% if q == None %}
+        <h1>Search</h1>
+    {% elif results %}
+        <h1>Do not found exact results for "{{ q }}". Did you mean:</h1>
+            <ul>
+                {% for result in results %}
+                    <li><a href="{% url 'wiki:entry' result %}">{{result}}</a></li>
+                {% endfor %}
+            </ul>
+    {% else %}
+            <h1>Do not found any keywords related to "{{ q }}"</h1>
+    {% endif %}
+{% endblock %}
