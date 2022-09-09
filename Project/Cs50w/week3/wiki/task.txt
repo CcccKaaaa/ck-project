@@ -25,4 +25,4 @@ Random Page:
     - Clicking “Random Page” in the sidebar should take user to a random encyclopedia entry. /Done
 
 Markdown to HTML Conversion:
-    - On each entry’s page, any Markdown content in the entry file should be converted to HTML before being displayed to the user.
+    - On each entry’s page, any Markdown content in the entry file should be converted to HTML before being displayed to the user./Done

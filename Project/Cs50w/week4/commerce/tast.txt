@@ -1,0 +1,6 @@
+C:\Users\ADMIN\Desktop\code\virtualenvs\wiki\Scripts\Activate.ps1
+cd C:\Users\ADMIN\Desktop\code\ck-project\Project\Cs50w\week4\commerce
+
+redirect user to the "next" page after login /Done
+create categories
+Success message after user login, create, bid....
