@@ -1,0 +1,110 @@
+
+textarea {
+    min-height: 400px;
+}
+
+.unread {
+    background-color: gray;
+}
+
+.read {
+    background-color: white;
+}   
+
+.mail {
+    height: fit-content;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 4px 2px 4px 2px;
+}
+
+.mail:hover {
+    cursor: pointer;
+    background-color: greenyellow;
+}
+.archive {
+    float:right
+}
+
+#emails-view > div > div {
+    flex: 1;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+#emails-view > div > div:nth-child(1) {
+
+    font-weight: 550;
+}
+
+#emails-view > div > div:nth-child(2) {
+    flex: 0 0 44em;
+    word-wrap: break-word;
+}
+
+#emails-view > div > div:nth-child(3) {
+
+    text-align: right;
+    font-weight: 350;
+}
+
+#email-view {
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #a4d4eb;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#email-view > div {
+ margin-left: 20px;
+ margin-right: 10px;
+}
+
+#from {
+    width: 100%;
+    order: 5;
+}
+
+#to {
+    width: 100%;
+    order: 6;
+    margin-bottom: 20px;
+}
+
+#subject {
+    word-wrap: break-word;
+    font-size: 40px;
+    order: 1;
+    width: 72%;
+}
+
+#time {
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+    order: 4;
+}
+
+#body {
+    order: 7;
+    width: 100%;
+    background-color: azure;
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+    padding: 20px 20px 20px 20px;
+}
+
+.archive {
+    order:2
+}
+
+.reply {
+    order:3
+}
+
+.button {
+    height: 35px;
+    width: 120px;
+    margin: 10px 10px 10px 10px; 
+    align-self:flex-start;
+}

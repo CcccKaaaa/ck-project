@@ -1,19 +1,19 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
+    <h2>Watchlist</h2>
     <div>
     {% for listing in listings %}
         <div class="card" style="width: 23%;">
             <div class="card-body">
                 <h5 class="card-title"><a href="/listing/{{listing.info.id}}">{{listing.info.title}}</a></h5>
                 <p class="card-text"><b>Price: {{listing.current_bid}}$</b></p>
-                <p class="card-text">Created by: {{listing.info.create_by}}</p>
                 <p class="card-text">Description: {{listing.info.description}}</p>
                 <p class="card-text">Category: {{listing.info.get_category_display}}</p>
-                <img class="card-img-top"src="{{listing.info.image_url}}" alt="{{listing.info.title}}">
+                <p class="card-text">Created by: {{listing.info.create_by}}</p>
+                <img src="{{listing.info.image_url}}" alt="{{listing.info.title}}">
             </div>
         </div>
-      {% endfor %}
+    {% endfor %}
     </div>
 {% endblock %}

@@ -1,18 +1,15 @@
-{% extends "auctions/layout.html" %}
+{% extends "mail/layout.html" %}
 
 {% block body %}
-<div class="form">
+
     <h2>Register</h2>
 
     {% if message %}
         <div>{{ message }}</div>
     {% endif %}
 
-    <form action="{% url 'auctions:register' %}" method="post">
+    <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
-        <div class="form-group">
-            <input class="form-control" autofocus type="text" name="username" placeholder="Username">
-        </div>
         <div class="form-group">
             <input class="form-control" type="email" name="email" placeholder="Email Address">
         </div>
@@ -24,8 +21,7 @@
         </div>
         <input class="btn btn-primary" type="submit" value="Register">
     </form>
-    <div style="text-align: center;">
-       <p></p> Already have an account? <a href="{% url 'auctions:login' %}">Log In here.</a>
-    </div>
-</div>
+
+    Already have an account? <a href="{% url 'login' %}">Log In here.</a>
+
 {% endblock %}

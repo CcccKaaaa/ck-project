@@ -10,7 +10,14 @@
         {% csrf_token %}
         <input type="submit" name="watchlist" value="{{state}}">
     </form>
+    {% if status %}
+        <p>Status: {{status}}</p>
+    {% endif %}
+    {% if winner %}
+        <p>Winner: {{winner}}</p>
+    {% endif %}
     <p>description: {{listing.description}}</p>
+    <p>Category: {{listing.get_category_display}}</p>
     <p>Current bid: {{bid_max.price}}</p>
     <p>Number of bid: {{bid_count}}</p>
     <p>Created by: {{listing.create_by}}</p>
@@ -18,6 +25,7 @@
     {% if listing.image_url %}
         <img src="{{listing.image_url}}" alt="{{listing.title}}">
     {% endif %}
+
     {% if bid_form %}
     <form action="{{listing.id}}" method="post">
         {% csrf_token %}
@@ -29,6 +37,24 @@
     <div>
         {{message}}
     </div>
-
     {% endif %}
+
+    <div>
+        {% if close_permission %}
+        <form action="{{listing.id}}" method="post">
+            {% csrf_token %}
+            <input class="btn btn-primary" type="submit" name="close" value="Close listing">
+        </form>
+        {% endif %}
+    </div>
+
+    <h4>Comment section:</h2>
+    {% for comment in comments %}
+        <p><b>{{comment.commented_by.username}}</b>: {{comment.content}}</p>
+    {% endfor %}
+    <form action="{{listing.id}}" method="post">
+        {% csrf_token %}
+        {{comment_form}}
+        <input type="submit" value="Post comment" name="comment">
+    </form>
 {% endblock %}

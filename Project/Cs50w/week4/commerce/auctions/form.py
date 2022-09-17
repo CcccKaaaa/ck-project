@@ -17,7 +17,16 @@ class bid(ModelForm):
     class Meta():
         model = Bids
         fields = ["price"]
+
     def __init__(self, *args, **kwargs):
         super(bid, self).__init__(*args, **kwargs)
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
+
+class comment(ModelForm):
+    class Meta():
+        model = Comments
+        fields = ["content"]
+        labels = {
+        "content": "Comment"
+        }

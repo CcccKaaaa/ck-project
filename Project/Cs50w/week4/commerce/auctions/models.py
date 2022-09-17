@@ -1,8 +1,3 @@
-from operator import mod
-from pyexpat import model
-from statistics import mode
-from tkinter import CASCADE
-from turtle import title
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
@@ -25,6 +20,7 @@ category_choices = [
     ("property_sell","Property for sale"),
     ("sporting","Sporting goods"),
     ("toys","Toys & games"),
+    ("other","Other"),
     ]
 
 class User(AbstractUser):
@@ -37,7 +33,7 @@ class Auctions(models.Model):
     title = models.CharField(max_length=64)
     description = models.TextField(blank=True, null=True)
     is_listing = models.BooleanField()
-    category = models.CharField(max_length=100, null=True, choices=category_choices)
+    category = models.CharField(max_length=100, null=True,blank=True, choices=category_choices)
     image_url = models.CharField(max_length=256, blank=True, null=True, default="https://demofree.sirv.com/nope-not-here.jpg")
 
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="created")

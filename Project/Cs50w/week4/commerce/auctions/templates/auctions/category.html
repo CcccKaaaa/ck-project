@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Category</h2>
+
+    {% for listing in listings %}
+        <h3><a href="/listing/{{listing.info.id}}">{{listing.info.title}}</a></h3>
+        <p>Created by: {{listing.info.create_by}}</p>
+        <p>Description: {{listing.info.description}}</p>
+        <p>Category: {{listing.info.get_category_display}}</p>
+        <p>Price: {{listing.current_bid}}</p>
+        <p>Created by: {{listing.info.create_by}}</p>
+        <img src="{{listing.info.image_url}}" alt="{{listing.info.title}}">
+        <br>
+    {% endfor %}
+{% endblock %}

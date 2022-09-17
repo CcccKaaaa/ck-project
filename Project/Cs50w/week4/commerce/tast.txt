@@ -1,6 +1,35 @@
-C:\Users\ADMIN\Desktop\code\virtualenvs\wiki\Scripts\Activate.ps1
+C:\Users\ADMIN\Desktop\code\virtualenvs\commerce\Scripts\Activate.ps1
 cd C:\Users\ADMIN\Desktop\code\ck-project\Project\Cs50w\week4\commerce
 
-redirect user to the "next" page after login /Done
-create categories
-Success message after user login, create, bid....
+python manage.py runserver 192.168.1.121:8000
+
+Improment
+    redirect user to the "next" page after login /Done
+    create categories /Done
+    404 page /Done
+    Success message after user login, create, bid....
+    server side validate
+    fix if user post the invalid account, the next parameter go away
+    error message set at bottom when registering
+    date and time 
+    --
+        Tên có dấu gạch
+        Một username, 1 email chỉ được dùng cho 1 tài khoản
+        Sau khi đăng ký thì tự động log in luôn
+        Sau khi nhập sai tên người dùng hoặc mật khẩu vẫn để nguyên nội dung cũ đã nhập trước đó
+        Create listing: đang để Image url ở create listing là link mặc định
+        Category: thay cho dấu ---- thì nên để là Choose  one category in the list
+        Status: Available
+        2. Active listing:
+        - Bị duplicate mục Created by
+        Price nên sửa thành Current price
+        -Chỉ show title, description, current price, photo, các nội dung khác show trong mục listing
+        3. Listing page
+        Nên sửa watching thành remove to watchlist
+        Phần comment sửa cho đẹp hơn
+        Bỏ add to watchlist khỏi trang list đã bị closed
+        4. Trang categories:
+        Khi mở một trang category cụ thể thì thay category bằng tên cụ thể
+    --
+Specification
+ - fix listing page
